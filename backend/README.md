@@ -11,7 +11,7 @@ bun install
 ## Run the Server
 
 ```sh
-bun run server.ts
+bun run dev
 ```
 
 Server default URL:

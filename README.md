@@ -22,7 +22,7 @@ bun install
 And to start the backend server, run:
 
 ```sh
-bun run server.ts
+bun run dev
 ```
 
 Backend runs on:
