@@ -10,6 +10,29 @@ curl -fsSL https://bun.sh/install | bash
 
 You will need to reload your shell's config file for it to work. 
 
+## Backend
+
+Go into the backend and install all the bun packages:
+
+```sh
+cd backend
+bun install
+```
+
+And to start the backend server, run:
+
+```sh
+bun run dev
+```
+
+Backend runs on:
+
+```
+http://localhost:8080
+```
+
+## Frontend
+
 Go into the frontend and install all the bun packages:
 
 ```sh
@@ -23,20 +46,11 @@ And to start the frontend server, run:
 bun run dev
 ```
 
-This will initiate a screen that will look something like this:
+Frontend runs on:
 
-```sh
-$ vite
-
-  VITE v8.0.11  ready in 174 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-  ➜  press h + enter to show help
+```txt
+http://localhost:5173
 ```
 
-Simply type in 'o' on the same screen and hit enter and the frontend should open up.
 
 Let's get this dionysus disciples!
-
-
