@@ -1,11 +1,10 @@
 import './App.css'
-import SampleComponent from './components/SampleComponent/SampleComponent'
-
+import LandingPage from './components/LandingPage/LandingPage'
 function App() {
     return (
         <>
-            Hi this is frontend
-            <SampleComponent />
+            
+            <LandingPage />
         </>
     )
 }
