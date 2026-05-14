@@ -1,3 +1,108 @@
-.exampleStyle {
+.cardWrapper {
+    width: 100vw;
+    height: 100vh;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f0e8;
+}
+
+.card {
+    background-color: #F3BE65;
+    width: 485px;
+    height: 631px;
+    border-radius: 25px;
+    padding: 40px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+    box-sizing: border-box;
+}
+
+/* Field groups */
+.fieldGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.label {
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: 0.01em;
+}
+
+.input {
+    width: 100%;
+    height: 52px;
+    background-color: #faf5ea;
+    border: none;
+    border-radius: 10px;
+    padding: 0 16px;
+    font-size: 16px;
+    color: #333;
+    outline: none;
+    box-sizing: border-box;
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input:focus {
+    background-color: #fff9ee;
+    box-shadow: 0 0 0 2px rgba(139, 90, 20, 0.25);
+}
+
+.input::placeholder {
+    color: transparent;
+}
+
+/* Sign up button */
+.submitButton {
+    align-self: center;
+    margin-top: 24px;
+    width: 200px;
+    height: 60px;
+    background-color: #faf5ea;
+    border: none;
+    border-radius: 16px;
+    font-family: 'Georgia', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.submitButton:hover {
+    background-color: #fff3d0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.submitButton:active {
+    transform: scale(0.97);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer link */
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Georgia', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2a1a00;
+}
+
+.signInLink {
+    color: #1a7a6e;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signInLink:hover {
+    text-decoration: underline;
 }
