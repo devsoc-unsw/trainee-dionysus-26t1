@@ -1,16 +1,17 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LandingPage from "./components/LandingPage/LandingPage";
-import './App.css';
+import './App.css'
+import LandingPage from './components/LandingPage/LandingPage'
+import LoginPage from './pages/LoginPage/LoginPage'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        {/* Add other routes here */}
-      </Routes>
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<LandingPage />} />
+                <Route path='/signup' element={<LoginPage />} />
+            </Routes>
+        </BrowserRouter>
+    )
 }
 
 export default App;
