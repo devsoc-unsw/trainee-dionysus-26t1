@@ -4,6 +4,8 @@ const handleSignup = async (email: string, username: string, password: string) =
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, username, password })
     });
+    const { token } = await res.json();
+    return token;
 }
 
 export default handleSignup;
