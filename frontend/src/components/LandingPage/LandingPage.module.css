@@ -1,6 +1,12 @@
-@keyframes waveShift {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+
+@keyframes waveScrollDown {
+    from { background-position-x: 0; }
+    to   { background-position-x: 50%; }
+}
+
+@keyframes waveScrollUp {
+    from { background-position-x: 50%; }
+    to   { background-position-x: 0; }
 }
 
 .page {
@@ -11,28 +17,21 @@
     overflow-x: hidden;
 }
 .waveDown {
-    background-color: #FEFAF2;
-    line-height: 0;
-    display: block;
-    overflow: hidden;
-}
-.waveDown svg {
-    display: block;
-    width: 200%;
+    background-color: #F3BE65;
     height: 100px;
-    animation: waveShift 15s linear infinite;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,50 C240,50 480,0 720,50 C960,50 1200,0 1440,50 L1440,0 Z' fill='%23FEFAF2'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: 50% 100%;
+    animation: waveScrollDown 30s linear infinite;
 }
-                   
+                
 .waveUp {
-    line-height: 0;
-    display: block;
-    overflow: hidden;
-}
-.waveUp svg {
-    display: block;
-    width: 200%;
-    height: 100px;
-    animation: waveShift 15s linear infinite reverse;
+    background-color: #F3BE65;
+    height: 140px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 130' preserveAspectRatio='none'%3E%3Cpath d='M0,130 L0,65 C240,30 480,50 720,65 C960,30 1200,50 1440,65 L1440,130 Z' fill='%23FEFAF2'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: 50% 100%;
+    animation: waveScrollUp 30s linear reverse infinite;
 }
 
 .btnPrimary {
@@ -48,7 +47,7 @@
     transition: background-color 0.2s ease, transform 0.15s ease;
 }
 .btnPrimary:hover {
-    background-color: #d4922a;
+    background-color: #e1b05c;
     transform: translateY(-1px);
 }
 
@@ -108,7 +107,6 @@
 .featuresTitle {
     font-family: 'Playfair Display', 'Arial Black', 'Arial Bold', Arial, sans-serif;
     font-size: 2rem;
-    font-weight: 900;
     margin: 0 0 8px 0;
     color: #1a1a1a;
 }
@@ -140,9 +138,8 @@
     padding: 60px 100px 60px;
 }
 .incentivesTitle {
-    font-family: 'Arial Black', 'Arial Bold', Arial, sans-serif;
+    font-family: 'Playfair Display', 'Arial Black', 'Arial Bold', Arial, sans-serif;
     font-size: 2rem;
-    font-weight: 900;
     margin: 0 0 40px 0;
     color: #1a1a1a;
 }
@@ -157,7 +154,7 @@
     max-width: 520px;
 }
 .quoteMarkOpen {
-    font-family: Georgia, serif;
+    font-family: "Noto Serif", Georgia, serif;
     font-size: 3.5rem;
     font-weight: 700;
     line-height: 1;
@@ -166,7 +163,7 @@
     margin-bottom: -10px;
 }
 .quoteMarkClose {
-    font-family: Georgia, serif;
+    font-family: "Noto Serif", Georgia, serif;
     font-size: 3.5rem;
     font-weight: 700;
     line-height: 1;
@@ -176,6 +173,7 @@
     margin-top: -10px;
 }
 .testimonialText {
+    font-family: 'Noto Serif', 'Arial', sans-serif;
     font-size: 1.35rem;
     font-weight: 700;
     line-height: 1.5;
