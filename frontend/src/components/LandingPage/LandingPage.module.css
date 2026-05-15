@@ -19,7 +19,7 @@
 .waveDown {
     background-color: #F3BE65;
     height: 100px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,50 C240,50 480,0 720,50 C960,50 1200,0 1440,50 L1440,0 Z' fill='%23FEFAF2'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,50 C240,90 480,0 720,50 C960,90 1200,0 1440,50 L1440,0 Z' fill='%23FEFAF2'/%3E%3C/svg%3E");
     background-repeat: repeat-x;
     background-size: 50% 100%;
     animation: waveScrollDown 30s linear infinite;
@@ -28,10 +28,10 @@
 .waveUp {
     background-color: #F3BE65;
     height: 140px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 130' preserveAspectRatio='none'%3E%3Cpath d='M0,130 L0,65 C240,30 480,50 720,65 C960,30 1200,50 1440,65 L1440,130 Z' fill='%23FEFAF2'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 130' preserveAspectRatio='none'%3E%3Cpath d='M0,130 L0,65 C240,0 480,50 720,65 C960,0 1200,50 1440,65 L1440,130 Z' fill='%23FEFAF2'/%3E%3C/svg%3E");
     background-repeat: repeat-x;
     background-size: 50% 100%;
-    animation: waveScrollUp 30s linear reverse infinite;
+    animation: waveScrollUp 30s linear infinite;
 }
 
 .btnPrimary {
@@ -131,6 +131,75 @@
     font-size: 0.88rem;
     line-height: 1.7;
     color: #1a1a1a;
+}
+
+.featureCard {
+    flex: 1;
+    max-width: 340px;
+    background-color: #FEFAF2;
+
+    padding: 56px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    align-items: center;
+}
+
+.featureCard::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #FEFAF2;
+}
+
+.featureCard:nth-child(1) {
+    clip-path: url(#dune1);
+}
+
+.featureCard:nth-child(2) {
+    clip-path: url(#dune2);
+}
+
+.featureCard:nth-child(3) {
+    clip-path: url(#dune3);
+}
+
+.featureCardIcon {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.featureCardTitle {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+    color: #1a1a1a;
+    text-align: center;
+}
+
+.featureCardDesc {
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+    color: #3a3a3a;
+}
+
+.incentiveCard {
+    flex: 1;
+    max-width: 340px;
+    background-color: #FEFAF2;
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    align-items: center;
 }
 
 .incentives {
