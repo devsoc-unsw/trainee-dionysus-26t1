@@ -106,3 +106,20 @@
 .signInLink:hover {
     text-decoration: underline;
 }
+
+.fieldGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.passwordError {
+    font-family: 'Georgia', serif;
+    color: red;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    font-size: 12px;
+}

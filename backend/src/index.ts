@@ -1,6 +1,9 @@
 import express from "express";
 import cors from "cors";
-import './db';
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv'
+dotenv.config()
+// import './db';
 // import { User, SleepEntry } from './models/schema';
 
 const app = express();
@@ -16,7 +19,7 @@ app.get("/", (req, res) => {
 
 // TODO: Add routes to add users and sleep event things
 
-app.post('/api/login/signup', (req, res) => {
+app.post('/api/signup', (req, res) => {
     // TODO: create a user in DB (once DB is set up)
     console.log(req.body.username)
     console.log(req.body.email)
@@ -29,7 +32,7 @@ app.post('/api/login/signup', (req, res) => {
 
     res.cookie('token', token, {
         httpOnly: true,
-        secure: true,       // HTTPS only
+        secure: process.env.NODE_ENV == 'production',
         sameSite: 'strict', // CSRF protection
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
     })

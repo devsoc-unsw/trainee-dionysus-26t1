@@ -1,6 +1,7 @@
 import styles from './LoginPage.module.css'
 import handleSignup from '../../api/handleSignup'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
     const [email, setEmail] = useState('');
@@ -8,14 +9,27 @@ const LoginPage = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
+    const navigate = useNavigate();
+
     // 3. Create a submit handler
     const onSubmit = async () => {
+        if (email.length == 0 ||
+            username.length == 0 ||
+            password.length == 0 ||
+            confirmPassword.length == 0) {
+            return;
+        }
+
         if (password !== confirmPassword) {
             // put a little indicator somewhere
         }
 
         // Now you can pass these variables to your API function
-        await handleSignup(email, username, password);
+        const success = await handleSignup(email, username, password);
+        if (success) {
+            // go to dashboard
+            navigate("/dashboard");
+        }
     };
 
     return (
@@ -61,6 +75,11 @@ const LoginPage = () => {
                             autoComplete="new-password"
                             onChange={(e) => setConfirmPassword(e.target.value)}
                         />
+
+                        {(password !== confirmPassword) &&
+                            <div className={styles.passwordError}>
+                                Please make sure the passwords match.
+                            </div>}
                     </div>
 
                     <button className={styles.submitButton} onClick={() => onSubmit()}>
