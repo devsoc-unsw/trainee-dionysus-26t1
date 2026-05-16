@@ -1,12 +1,8 @@
 
-@keyframes waveScrollDown {
-    from { background-position-x: 0; }
-    to   { background-position-x: 50%; }
-}
 
-@keyframes waveScrollUp {
-    from { background-position-x: 50%; }
-    to   { background-position-x: 0; }
+@keyframes gentleSway {
+  0% { background-position-x: 0; }
+  100% { background-position-x: 2220px; }
 }
 
 .page {
@@ -17,23 +13,22 @@
     overflow-x: hidden;
 }
 .waveDown {
-    background-color: #F3BE65;
-    height: 100px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L0,50 C240,90 480,0 720,50 C960,90 1200,0 1440,50 L1440,0 Z' fill='%23FEFAF2'/%3E%3C/svg%3E");
-    background-repeat: repeat-x;
-    background-size: 50% 100%;
-    animation: waveScrollDown 30s linear infinite;
+  background-color: #F3BE65;
+  height: 100px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L1440,0 L1440,100 C 1280,85 1200,45 1120,70 C 1040,95 960,115 880,90 C 800,65 720,35 640,60 C 560,85 480,105 400,80 C 320,55 240,30 160,70 C 80,110 40,95 0,100 Z' fill='%23FEFAF2' /%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 100% 100%;
+  animation: gentleSway 30s linear infinite;
 }
                 
 .waveUp {
-    background-color: #F3BE65;
-    height: 140px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 130' preserveAspectRatio='none'%3E%3Cpath d='M0,130 L0,65 C240,0 480,50 720,65 C960,0 1200,50 1440,65 L1440,130 Z' fill='%23FEFAF2'/%3E%3C/svg%3E");
-    background-repeat: repeat-x;
-    background-size: 50% 100%;
-    animation: waveScrollUp 30s linear infinite;
+  background-color: #F3BE65;
+  height: 100px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,100 L1440,100 L1440,0 C 1280,15 1200,55 1120,30 C 1040,5 960,-15 880,10 C 800,35 720,65 640,40 C 560,15 480,-5 400,20 C 320,45 240,70 160,30 C 80,-10 40,5 0,0 Z' fill='%23FEFAF2' /%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 100% 100%;
+  animation: gentleSway 32s linear reverse infinite;
 }
-
 .btnPrimary {
     background-color: #F3BE65;
     color: #1a1a1a;
@@ -137,8 +132,12 @@
     flex: 1;
     max-width: 340px;
     background-color: #FEFAF2;
-
-    padding: 56px 24px;
+    border: #e6b35c solid 6px;
+    border-radius: 24px;
+    padding-top: 60px;
+    padding-bottom: 50px;
+    padding-right: 24px;
+    padding-left: 24px;
     display: flex;
     flex-direction: column;
     gap: 12px;
