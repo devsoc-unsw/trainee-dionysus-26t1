@@ -11,7 +11,6 @@ const LoginPage = () => {
 
     const navigate = useNavigate();
 
-    // 3. Create a submit handler
     const onSubmit = async () => {
         if (email.length == 0 ||
             username.length == 0 ||
@@ -20,14 +19,8 @@ const LoginPage = () => {
             return;
         }
 
-        if (password !== confirmPassword) {
-            // put a little indicator somewhere
-        }
-
-        // Now you can pass these variables to your API function
         const success = await handleSignup(email, username, password);
         if (success) {
-            // go to dashboard
             navigate("/dashboard");
         }
     };
