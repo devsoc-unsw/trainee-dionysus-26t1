@@ -5,10 +5,16 @@ import lifeguardIcon from '../../assets/lifeguard.png'
 import sandsurferIcon from '../../assets/sandsurfer.png'
 import bonfireIcon from '../../assets/bonfire.png'
 import whistleIcon from '../../assets/whistle.png'
+import Header from '../Header/Header'
 
 const LandingPage = () => {
     return (
+        
         <div className={styles.page}>
+            <div>
+                <Header name = "lau"></Header>
+                <button>check in </button>
+            </div>
             <div className={styles.waveUp} />
             <svg width="0" height="0" style={{ position: 'absolute' }}>
                 <defs>
