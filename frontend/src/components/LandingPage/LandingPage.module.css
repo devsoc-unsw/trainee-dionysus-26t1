@@ -1,6 +1,8 @@
-@keyframes waveShift {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+
+
+@keyframes gentleSway {
+  0% { background-position-x: 0; }
+  100% { background-position-x: 2220px; }
 }
 
 .page {
@@ -11,30 +13,22 @@
     overflow-x: hidden;
 }
 .waveDown {
-    background-color: #FEFAF2;
-    line-height: 0;
-    display: block;
-    overflow: hidden;
+  background-color: #F3BE65;
+  height: 100px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,0 L1440,0 L1440,100 C 1280,85 1200,45 1120,70 C 1040,95 960,115 880,90 C 800,65 720,35 640,60 C 560,85 480,105 400,80 C 320,55 240,30 160,70 C 80,110 40,95 0,100 Z' fill='%23FEFAF2' /%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 100% 100%;
+  animation: gentleSway 30s linear infinite;
 }
-.waveDown svg {
-    display: block;
-    width: 200%;
-    height: 100px;
-    animation: waveShift 15s linear infinite;
-}
-                   
+                
 .waveUp {
-    line-height: 0;
-    display: block;
-    overflow: hidden;
+  background-color: #F3BE65;
+  height: 100px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath d='M0,100 L1440,100 L1440,0 C 1280,15 1200,55 1120,30 C 1040,5 960,-15 880,10 C 800,35 720,65 640,40 C 560,15 480,-5 400,20 C 320,45 240,70 160,30 C 80,-10 40,5 0,0 Z' fill='%23FEFAF2' /%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 100% 100%;
+  animation: gentleSway 32s linear reverse infinite;
 }
-.waveUp svg {
-    display: block;
-    width: 200%;
-    height: 100px;
-    animation: waveShift 15s linear infinite reverse;
-}
-
 .btnPrimary {
     background-color: #F3BE65;
     color: #1a1a1a;
@@ -48,7 +42,7 @@
     transition: background-color 0.2s ease, transform 0.15s ease;
 }
 .btnPrimary:hover {
-    background-color: #d4922a;
+    background-color: #e1b05c;
     transform: translateY(-1px);
 }
 
@@ -108,7 +102,6 @@
 .featuresTitle {
     font-family: 'Playfair Display', 'Arial Black', 'Arial Bold', Arial, sans-serif;
     font-size: 2rem;
-    font-weight: 900;
     margin: 0 0 8px 0;
     color: #1a1a1a;
 }
@@ -135,14 +128,86 @@
     color: #1a1a1a;
 }
 
+.featureCard {
+    flex: 1;
+    max-width: 340px;
+    background-color: #FEFAF2;
+    border: #e6b35c solid 6px;
+    border-radius: 24px;
+    padding-top: 60px;
+    padding-bottom: 50px;
+    padding-right: 24px;
+    padding-left: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    align-items: center;
+}
+
+.featureCard::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #FEFAF2;
+}
+
+.featureCard:nth-child(1) {
+    clip-path: url(#dune1);
+}
+
+.featureCard:nth-child(2) {
+    clip-path: url(#dune2);
+}
+
+.featureCard:nth-child(3) {
+    clip-path: url(#dune3);
+}
+
+.featureCardIcon {
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.featureCardTitle {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+    color: #1a1a1a;
+    text-align: center;
+}
+
+.featureCardDesc {
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+    color: #3a3a3a;
+}
+
+.incentiveCard {
+    flex: 1;
+    max-width: 340px;
+    background-color: #FEFAF2;
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    align-items: center;
+}
+
 .incentives {
     background-color: #FEFAF2;
     padding: 60px 100px 60px;
 }
 .incentivesTitle {
-    font-family: 'Arial Black', 'Arial Bold', Arial, sans-serif;
+    font-family: 'Playfair Display', 'Arial Black', 'Arial Bold', Arial, sans-serif;
     font-size: 2rem;
-    font-weight: 900;
     margin: 0 0 40px 0;
     color: #1a1a1a;
 }
@@ -157,7 +222,7 @@
     max-width: 520px;
 }
 .quoteMarkOpen {
-    font-family: Georgia, serif;
+    font-family: "Noto Serif", Georgia, serif;
     font-size: 3.5rem;
     font-weight: 700;
     line-height: 1;
@@ -166,7 +231,7 @@
     margin-bottom: -10px;
 }
 .quoteMarkClose {
-    font-family: Georgia, serif;
+    font-family: "Noto Serif", Georgia, serif;
     font-size: 3.5rem;
     font-weight: 700;
     line-height: 1;
@@ -176,6 +241,7 @@
     margin-top: -10px;
 }
 .testimonialText {
+    font-family: 'Noto Serif', 'Arial', sans-serif;
     font-size: 1.35rem;
     font-weight: 700;
     line-height: 1.5;
