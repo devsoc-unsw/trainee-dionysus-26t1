@@ -1,6 +1,8 @@
 import './App.css'
 import LandingPage from './components/LandingPage/LandingPage'
-import LoginPage from './pages/LoginPage/LoginPage'
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
+import SampleComponent from './components/SampleComponent/SampleComponent'
+import SignupPage from './pages/SignupPage/SignupPage'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
@@ -8,7 +10,12 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<LandingPage />} />
-                <Route path='/signup' element={<LoginPage />} />
+                <Route path='/signup' element={<SignupPage />} />
+
+                {/* Routes that need auth */}
+                <Route element={<ProtectedRoute />}>
+                    <Route path='/sample' element={<SampleComponent />} />
+                </Route>
             </Routes>
         </BrowserRouter>
     )

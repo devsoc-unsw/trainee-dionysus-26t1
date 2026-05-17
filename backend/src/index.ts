@@ -2,6 +2,8 @@ import express from "express";
 import cors from "cors";
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv'
+import cookieparser from 'cookie-parser';
+
 dotenv.config()
 // import './db';
 // import { User, SleepEntry } from './models/schema';
@@ -9,8 +11,12 @@ dotenv.config()
 const app = express();
 const port = 8080;
 
-app.use(cors());
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true, // required for cookies
+}))
 app.use(express.json());
+app.use(cookieparser())
 
 // Test route
 app.get("/", (req, res) => {
@@ -38,6 +44,20 @@ app.post('/api/signup', (req, res) => {
     })
 
     res.sendStatus(200);
+});
+
+app.get('/api/auth/me', (req, res) => {
+    const token = req.cookies.token;
+    if (!token) {
+        return res.sendStatus(401);
+    }
+
+    try {
+        const user = jwt.verify(token, process.env.JWT_SECRET!);
+        res.json(user);
+    } catch {
+        res.sendStatus(401);
+    }
 });
 
 app.listen(port, () => {

@@ -1,9 +1,9 @@
-import styles from './LoginPage.module.css'
+import styles from './SignupPage.module.css'
 import handleSignup from '../../api/handleSignup'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-const LoginPage = () => {
+const SignupPage = () => {
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -16,6 +16,10 @@ const LoginPage = () => {
             username.length == 0 ||
             password.length == 0 ||
             confirmPassword.length == 0) {
+            return;
+        }
+
+        if (password !== confirmPassword) {
             return;
         }
 
@@ -90,4 +94,4 @@ const LoginPage = () => {
     )
 }
 
-export default LoginPage
+export default SignupPage;
