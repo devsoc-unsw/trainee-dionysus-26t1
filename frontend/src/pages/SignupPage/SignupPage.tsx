@@ -1,21 +1,32 @@
-import styles from './LoginPage.module.css'
+import styles from './SignupPage.module.css'
 import handleSignup from '../../api/handleSignup'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
-const LoginPage = () => {
+const SignupPage = () => {
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    // 3. Create a submit handler
+    const navigate = useNavigate();
+
     const onSubmit = async () => {
-        if (password !== confirmPassword) {
-            // put a little indicator somewhere
+        if (email.length == 0 ||
+            username.length == 0 ||
+            password.length == 0 ||
+            confirmPassword.length == 0) {
+            return;
         }
 
-        // Now you can pass these variables to your API function
-        await handleSignup(email, username, password);
+        if (password !== confirmPassword) {
+            return;
+        }
+
+        const success = await handleSignup(email, username, password);
+        if (success) {
+            navigate("/dashboard");
+        }
     };
 
     return (
@@ -61,6 +72,11 @@ const LoginPage = () => {
                             autoComplete="new-password"
                             onChange={(e) => setConfirmPassword(e.target.value)}
                         />
+
+                        {(password !== confirmPassword) &&
+                            <div className={styles.passwordError}>
+                                Please make sure the passwords match.
+                            </div>}
                     </div>
 
                     <button className={styles.submitButton} onClick={() => onSubmit()}>
@@ -78,4 +94,4 @@ const LoginPage = () => {
     )
 }
 
-export default LoginPage
+export default SignupPage;

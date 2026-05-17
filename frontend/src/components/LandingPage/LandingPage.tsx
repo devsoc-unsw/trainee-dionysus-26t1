@@ -5,8 +5,11 @@ import lifeguardIcon from '../../assets/lifeguard.png'
 import sandsurferIcon from '../../assets/sandsurfer.png'
 import bonfireIcon from '../../assets/bonfire.png'
 import whistleIcon from '../../assets/whistle.png'
+import { useNavigate } from 'react-router-dom'
 
 const LandingPage = () => {
+    const navigate = useNavigate();
+
     return (
         <div className={styles.page}>
             <div className={styles.waveUp} />
@@ -26,7 +29,7 @@ const LandingPage = () => {
             <section className={styles.hero}>
                 <div className={styles.heroContent}>
                     <h1 className={styles.heroTitle}>SANDMAN</h1>
-                    <button className={styles.btnPrimary}>Get Started</button>
+                    <button className={styles.btnPrimary} onClick={() => navigate("/signup")}>Get Started</button>
                 </div>
                 <div className={styles.heroIcon}>
                     placeholder for hero image/icon thingy
@@ -106,7 +109,7 @@ const LandingPage = () => {
             </section>
 
             <section className={styles.cta}>
-                <button className={styles.btnPrimary}>Get Started</button>
+                <button className={styles.btnPrimary} onClick={() => navigate("/signup")}>Get Started</button>
             </section>
 
             <div className={styles.waveDown} />
