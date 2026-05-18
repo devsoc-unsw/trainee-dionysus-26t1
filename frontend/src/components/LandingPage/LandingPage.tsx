@@ -1,120 +1,127 @@
 import styles from './LandingPage.module.css'
-import sandcastleIcon from '../../assets/sandcastle.png'
-import beachvolleyballIcon from '../../assets/beachvolleyball.png'
-import lifeguardIcon from '../../assets/lifeguard.png'
-import sandsurferIcon from '../../assets/sandsurfer.png'
-import bonfireIcon from '../../assets/bonfire.png'
-import whistleIcon from '../../assets/whistle.png'
 import { useNavigate } from 'react-router-dom'
-
+import cat_logo from '../../assets/cat_logo.png'
+import cat_logo2 from '../../assets/cat_logo2.png'
+import bg_gradient from '../../assets/bg_gradient_img.png'
 const LandingPage = () => {
-    const navigate = useNavigate();
-
+    const navigate = useNavigate()
     return (
         <div className={styles.page}>
-            <div className={styles.waveUp} />
-            <svg width="0" height="0" style={{ position: 'absolute' }}>
-                <defs>
-                    <clipPath id="dune1" clipPathUnits="objectBoundingBox">
-                        <path d="M0,0.15 C0.1,0.02 0.25,0.18 0.4,0.08 C0.55,-0.02 0.7,0.2 0.85,0.1 C0.92,0.05 0.97,0.12 1,0.1 L1,1 L0,1 Z" />
-                    </clipPath>
-                    <clipPath id="dune2" clipPathUnits="objectBoundingBox">
-                        <path d="M0,0.12 C0.15,0.25 0.3,0.05 0.5,0.15 C0.65,0.22 0.75,0.02 0.9,0.12 C0.95,0.16 0.98,0.1 1,0.08 L1,1 L0,1 Z" />
-                    </clipPath>
-                    <clipPath id="dune3" clipPathUnits="objectBoundingBox">
-                        <path d="M0,0.15 C0.1,0.02 0.25,0.18 0.4,0.08 C0.55,-0.02 0.7,0.2 0.85,0.1 C0.92,0.05 0.97,0.12 1,0.1 L1,1 L0,1 Z" />
-                    </clipPath>
-                </defs>
-            </svg>
+
+            {/* ── NAVBAR ── */}
+            <nav className={styles.nav}>
+                <div className={styles.navLogo}>
+                    <img src={cat_logo2} alt="Cat Logo" className={styles.navLogoIcon} />
+                    <div className={styles.navLinks}>
+                        <span className={styles.navLogoText}>Sandman</span>
+                        <a href="#" className={styles.navLink}>Features</a>
+                        <a href="#" className={styles.navLink}>Why us</a>
+                    </div>
+                </div>
+                <div className={styles.navActions}>
+                    <a href="#" className={styles.navSignIn} onClick={(e) => {
+                        e.preventDefault()
+                        navigate('/signin')
+                    }}>
+                        Sign in
+                    </a>
+                    <button className={styles.navCta} onClick={() => navigate('/signup')}>
+                        Get started
+                    </button>
+                </div>
+            </nav>
+
+            {/* ── HERO ── */}
             <section className={styles.hero}>
+                <div className={styles.heroGradient} />
                 <div className={styles.heroContent}>
-                    <h1 className={styles.heroTitle}>SANDMAN</h1>
-                    <button className={styles.btnPrimary} onClick={() => navigate("/signup")}>Get Started</button>
-                </div>
-                <div className={styles.heroIcon}>
-                    placeholder for hero image/icon thingy
-                </div>
-            </section>
-
-            <div className={styles.waveDown} />
-
-            <section className={styles.features}>
-                <div className={styles.featuresHeader}>
-                    <div className={styles.featuresTitleBlock}>
-                        <h2 className={styles.featuresTitle}>Features FAH</h2>
-                        <div className={styles.featuresTitleUnderline} />
-                    </div>
-                    <div className={styles.featuresListBlock}>
-                        <p className={styles.featuresListLabel}>Planned features:</p>
-                        <ul className={styles.featuresList}>
-                            <li>goal setting</li>
-                            <li>leaderboard</li>
-                            <li>check-in notifications (prob not cause mobile)</li>
-                        </ul>
-                    </div>
-                </div>
-                <div className={styles.cardRow}>
-                    <div className={styles.featureCard}>
-                        <div className={styles.featureCardIcon}><img src={sandcastleIcon} alt="Sandcastle Icon" /></div>
-                        <h3 className={styles.featureCardTitle}>Goal Setting</h3>
-
-                        <div className={styles.featureCardDesc}>Set personal training goals and track your progress over time.</div>
-                    </div>
-                    <div className={styles.featureCard}>
-                        <div className={styles.featureCardIcon}><img src={beachvolleyballIcon} alt="Beach Volleyball Icon" /></div>
-                        <h3 className={styles.featureCardTitle}>Activity Board</h3>
-                        <div className={styles.featureCardDesc}>Log your daily activities and see what everyone else is up to.</div>
-                    </div>
-                    <div className={styles.featureCard}>
-                        <div className={styles.featureCardIcon}><img src={lifeguardIcon} alt="Lifeguard Icon" /></div>
-                        <h3 className={styles.featureCardTitle}>Leaderboard</h3>
-                        <div className={styles.featureCardDesc}>Compete with friends and climb the ranks every week.</div>
-                    </div>
-                </div>
-            </section>
-
-            <div className={styles.waveUp} />
-
-            <section className={styles.incentives}>
-                <h2 className={styles.incentivesTitle}>Incentives reasoning thingy</h2>
-                <div className={styles.cardRow}>
-                    <div className={styles.incentiveCard}>
-                        <div className={styles.featureCardIcon}><img src={whistleIcon} alt="Whistle Icon" /></div>
-                        <h3 className={styles.featureCardTitle}>Wake-Up Accountability</h3>
-                        <p className={styles.featureCardDesc}>Commit to a wake-up time and have your friends hold you to it.</p>
-                    </div>
-                    <div className={styles.incentiveCard}>
-                        <div className={styles.featureCardIcon}><img src={bonfireIcon} alt="Bonfire Icon" /></div>
-                        <h3 className={styles.featureCardTitle}>Better With Friends</h3>
-                        <p className={styles.featureCardDesc}>Everything hits different when your friends are watching. Stay consistent together.</p>
-                    </div>
-                    <div className={styles.incentiveCard}>
-                        <div className={styles.featureCardIcon}><img src={sandsurferIcon} alt="Sandsurfer Icon" /></div>
-                        <h3 className={styles.featureCardTitle}>Stay Motivated</h3>
-                        <p className={styles.featureCardDesc}>Friendly competition keeps the energy high and the excuses low.</p>
-                    </div>
-
-                </div>
-            </section>
-
-            <section className={styles.testimonial}>
-                <div className={styles.testimonialInner}>
-                    <span className={styles.quoteMarkOpen}>"</span>
-                    <p className={styles.testimonialText}>
-                        The BEST competitive social accountability website that WE need!
+                    <img src={cat_logo} alt="Cat Logo" className={styles.heroMascot} />
+                    <h1 className={styles.heroTitle}>Enhance your sleep.</h1>
+                    <p className={styles.heroSubtitle}>
+                        The social accountability web app that sharpens<br />
+                        your workflow, starting from the root.
                     </p>
-                    <span className={styles.quoteMarkClose}>"</span>
-                    <p className={styles.testimonialAuthor}>LEBRON</p>
+                    <div className={styles.heroActions}>
+                        <button className={styles.btnRed} onClick={() => navigate('/signup')}>
+                            Get started
+                        </button>
+                        <a href="#" className={styles.heroSignIn} onClick={(e) => {
+                            e.preventDefault()
+                            navigate('/signin')
+                        }}>
+                            Sign in
+                        </a>
+                    </div>
                 </div>
             </section>
 
-            <section className={styles.cta}>
-                <button className={styles.btnPrimary} onClick={() => navigate("/signup")}>Get Started</button>
+            {/* ── MONITOR HABITS ── */}
+            <section className={styles.features}>
+                <h2 className={styles.sectionTitle}>Monitor your habits.</h2>
+                <div className={styles.cardGrid2}>
+                    <div className={styles.featureCard}>
+                        <h3 className={styles.cardTitle}>Goal setting</h3>
+                        <p className={styles.cardDesc}>Log your daily activities, set personal training goals, and track your progress over time.</p>
+                    </div>
+                    <div className={styles.featureCard}>
+                        <h3 className={styles.cardTitle}>Automated check-in time</h3>
+                        <p className={styles.cardDesc}>Automate your daily check-in times. Less admin. More productivity.</p>
+                    </div>
+                </div>
             </section>
 
-            <div className={styles.waveDown} />
+            {/* ── COMPETE ── */}
+            <section className={styles.features}>
+                <h2 className={styles.sectionTitle}>Compete and win.</h2>
+                <div className={styles.cardGrid2}>
+                    <div className={styles.featureCard}>
+                        <h3 className={styles.cardTitle}>Better with friends</h3>
+                        <p className={styles.cardDesc}>Everything hits different when your friends are watching. Stay consistent together.</p>
+                    </div>
+                    <div className={styles.featureCard}>
+                        <h3 className={styles.cardTitle}>Wake up accountability</h3>
+                        <p className={styles.cardDesc}>Commit to a wake up time and have your friends hold you to it.</p>
+                    </div>
+                </div>
+            </section>
+
+            {/* ── TRACK ── */}
+            <section className={styles.features}>
+                <h2 className={styles.sectionTitle}>Track long-term improvement.</h2>
+                <div className={styles.cardGrid1}>
+                    <div className={styles.featureCard}>
+                        <h3 className={styles.cardTitle}>Stay motivated</h3>
+                        <p className={styles.cardDesc}>Climb the ranks every week and watch your points accumulate. Friendly competition keeps the energy high and the excuses low.</p>
+                    </div>
+                </div>
+            </section>
+
+            {/* ── CTA SECTION ── */}
+            <div className={styles.ctaWrapper}>
+            <img src={bg_gradient} alt="" className={styles.ctaBg} />
+            <section className={styles.ctaSection}>
+                <div className={styles.ctaContent}>
+                    <h2 className={styles.ctaTitle}>More productivity.<br />Better sleep.</h2>
+                    <p className={styles.ctaDesc}>
+                        <strong>Sandman</strong> will always be free and fully browser-integrated.<br />
+                        Try all features today and supercharge your mind.
+                    </p>
+                    <p className={styles.ctaTagline}>A new you is waiting.</p>
+                    <button className={styles.btnRed} onClick={() => navigate('/signup')}>
+                        Get started
+                    </button>
+                </div>
+                <p className={styles.ctaTrusted}>Trusted by LeBron and 98% of TP Dionysus.</p>
+            </section>
+        </div>
+
+            {/* ── FOOTER ── */}
             <footer className={styles.footer}>
-                <p>© 2026 TP Dionysus</p>
+                <div className={styles.footerLogo}>
+                    <img src={cat_logo2} alt="Cat Logo" className={styles.footerLogoIcon} />
+                    <span className={styles.navLogoText}>Sandman</span>
+                </div>
+                <p className={styles.footerCopy}>© 2026 TP Dionysus</p>
             </footer>
 
         </div>
