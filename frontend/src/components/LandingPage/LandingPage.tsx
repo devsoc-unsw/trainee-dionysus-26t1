@@ -8,7 +8,6 @@ const LandingPage = () => {
     return (
         <div className={styles.page}>
 
-            {/* ── NAVBAR ── */}
             <nav className={styles.nav}>
                 <div className={styles.navLogo}>
                     <img src={cat_logo2} alt="Cat Logo" className={styles.navLogoIcon} />
@@ -31,7 +30,6 @@ const LandingPage = () => {
                 </div>
             </nav>
 
-            {/* ── HERO ── */}
             <section className={styles.hero}>
                 <div className={styles.heroGradient} />
                 <div className={styles.heroContent}>
@@ -55,7 +53,6 @@ const LandingPage = () => {
                 </div>
             </section>
 
-            {/* ── MONITOR HABITS ── */}
             <section className={styles.features}>
                 <h2 className={styles.sectionTitle}>Monitor your habits.</h2>
                 <div className={styles.cardGrid2}>
@@ -70,7 +67,6 @@ const LandingPage = () => {
                 </div>
             </section>
 
-            {/* ── COMPETE ── */}
             <section className={styles.features}>
                 <h2 className={styles.sectionTitle}>Compete and win.</h2>
                 <div className={styles.cardGrid2}>
@@ -96,7 +92,6 @@ const LandingPage = () => {
                 </div>
             </section>
 
-            {/* ── CTA SECTION ── */}
             <div className={styles.ctaWrapper}>
             <img src={bg_gradient} alt="" className={styles.ctaBg} />
             <section className={styles.ctaSection}>
@@ -115,7 +110,6 @@ const LandingPage = () => {
             </section>
         </div>
 
-            {/* ── FOOTER ── */}
             <footer className={styles.footer}>
                 <div className={styles.footerLogo}>
                     <img src={cat_logo2} alt="Cat Logo" className={styles.footerLogoIcon} />

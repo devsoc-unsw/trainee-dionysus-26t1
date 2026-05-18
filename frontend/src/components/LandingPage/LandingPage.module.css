@@ -1,4 +1,4 @@
-/* ── Tokens ── */
+
 :root {
     --cream: #F5ECD7;
     --sand:  #EDCFA0;
@@ -9,7 +9,7 @@
     --dark:  #2A1500;
 }
 
-/* ── Base ── */
+
 .page {
     font-family: 'Georgia', serif;
     background-color: var(--cream);
@@ -20,7 +20,6 @@
     padding: 0;
 }
 
-/* ── Navbar ── */
 .nav {
     position: sticky;
     top: 0;
@@ -103,7 +102,6 @@
     background-color: var(--red);
 }
 
-/* ── Hero ── */
 .hero {
     position: relative;
     min-height: 420px;
@@ -172,7 +170,6 @@
     text-decoration: underline;
 }
 
-/* ── Shared button ── */
 .btnRed {
     background-color: var(--red);
     color: #fff;
@@ -191,7 +188,6 @@
     transform: translateY(-1px);
 }
 
-/* ── Feature sections ── */
 .features {
     background-color: var(--sand);
     padding: 64px 64px 48px;
@@ -331,7 +327,6 @@
     margin: 0;
 }
 
-/* ── Responsive ── */
 @media (max-width: 1024px) {
     .nav {
         padding: 10px 48px;
